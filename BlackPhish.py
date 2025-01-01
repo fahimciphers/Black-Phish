@@ -3,7 +3,7 @@ import sys
 from sys import version_info
 
 if version_info < (3, 0, 0):
-    print('[!] Please use Python 3. $ python3 CyberPhish.py')
+    print('[!] Please use Python 3. $ python3 BlackPhish.py')
     sys.exit()
 
 from Core.eletter import Instagram
