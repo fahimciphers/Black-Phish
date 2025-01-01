@@ -37,9 +37,10 @@ banner = f"""
 ██╔══██╗██║     ██╔══██║██║     ██╔═██╗     ██╔═══╝ ██╔══██║██║╚════██║██╔══██║
 ██████╔╝███████╗██║  ██║╚██████╗██║  ██╗    ██║     ██║  ██║██║███████║██║  ██║
 ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚═╝     ╚═╝  ╚═╝╚═╝╚══════╝╚═╝  ╚═╝ \n
-	</> Author: Fahim Muntasir | BLACK HAT BD
+			</> Author: Fahim Muntasir | BLACK HAT BD
+
 	===========================================================
-	Telegram: @fahimciphers
+			Telegram: @fahimciphers
 	===========================================================
 """
 
@@ -51,16 +52,14 @@ def connected(host='http://duckduckgo.com'):
     except:
         return False
 
-# Fancy scrolling animation
-def scroll_text(text, delay=0.05):
-    for i in range(len(text)):
-        print(text[i:], end='\r', flush=True)
-        time.sleep(delay)
+# Function to animate text
+def banner_animation():
+    delay_print(banner, 0.05)
 
 # Create the menu with smooth animation
 def menu():
     clear_screen()  # Clear screen before displaying menu
-    delay_print(banner, 0.05)  # Banner with typing animation
+    banner_animation()  # Banner with typing animation
 
     # Animated "stay updated" message
     delay_print(red + "More Versions Will Come Soon. Stay Updated, Follow My Github\n", 0.1)
@@ -76,8 +75,8 @@ def menu():
     ]
     
     for name, index in menu_items:
-        scroll_text(green + f"[{white}{index}{green}] {white}{name}", 0.1)
-    
+        print(green + f"[{white}{index}{green}] {white}{name}")
+
     print(green + "-----------------------------------------------------------------------")
     print(green + f"[{white}00{green}] {red}EXIT")
 
