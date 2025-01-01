@@ -8,7 +8,7 @@ from colorama import Fore, Style, init
 init(autoreset=True)
 
 # Function to simulate delay (for animation-like effects)
-def delay_print(message, delay=0.05):
+def delay_print(message, delay=0.01):  # Reduced delay to speed up animation
     for char in message:
         print(char, end='', flush=True)
         time.sleep(delay)
@@ -54,7 +54,7 @@ def connected(host='http://duckduckgo.com'):
 
 # Function to animate text
 def banner_animation():
-    delay_print(banner, 0.05)
+    delay_print(banner, 0.01)  # Faster animation (1 second total)
 
 # Create the menu with smooth animation
 def menu():
@@ -62,7 +62,7 @@ def menu():
     banner_animation()  # Banner with typing animation
 
     # Animated "stay updated" message
-    delay_print(red + "More Versions Will Come Soon. Stay Updated, Follow My Github\n", 0.1)
+    delay_print(red + "More Versions Will Come Soon. Stay Updated, Follow My Github\n", 0.01)
     
     print(white + "Options:")
 
@@ -83,7 +83,7 @@ def menu():
 # Welcome Function to clear screen and show banner
 def Welcome():
     clear_screen()
-    delay_print(f"{blue}Initializing system...\n", 0.1)
+    delay_print(f"{blue}Initializing system...\n", 0.01)
     time.sleep(0.5)  # Simulate a short wait for system readiness
 
 # Main Execution
