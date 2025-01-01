@@ -12,7 +12,7 @@ def IpPick():
 	print(numbering(2) + white + " Pre-Generated Ip")
 	print("")
 	
-	IpPick = int(input(green + "root@CyberPhish/Ip:~ "))
+	IpPick = int(input(green + "root@BlackPhish/Ip:~ "))
 	print("")
 	
 	if IpPick == 1:
