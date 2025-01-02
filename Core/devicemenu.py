@@ -11,9 +11,9 @@ def Custom():
 	print(alert + " Enter Browser")
 	print("")
 	
-	Browser = input(green + "root@CyberPhish/Device/Custom:~ ")
+	Browser = input(green + "root@BlackPhish/Device/Custom:~ ")
 	print(alert + " Enter Device")
-	Device = input("root@CyberPhish/Device/Custom:~ ")
+	Device = input("root@BlackPhish/Device/Custom:~ ")
 
 def AllNeed():
 	global Browser
@@ -29,7 +29,7 @@ def AllNeed():
 	print(numbering(7) + blue + " Safari" + white + "  »" + blue + " IPad" + white + "    «")
 	print(numbering(8) + white + "    »" + blue + " Custom" + white + " «")
 	print("")
-	DevicePick = int(input(green + "root@CyberPhish/Device:~ " + white))
+	DevicePick = int(input(green + "root@BlackPhish/Device:~ " + white))
 	
 	if DevicePick == 1:
 		Browser = ("Chrome")
@@ -265,7 +265,7 @@ def Dropbox():
 	print(numbering(12) + white + " December")
 	print("")
 	
-	monthpick = int(input(green + "root@CyberPhish/month:~ " + white))
+	monthpick = int(input(green + "root@BlackPhish/month:~ " + white))
 	month = monthName(monthpick)
 	
 	print("")
