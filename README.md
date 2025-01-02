@@ -2,6 +2,8 @@
 # BlackPhish
 
 **A powerful and customizable phishing tool for educational purposes only.** BlackPhish offers phishing email templates for popular social media platforms.
+## Screenshot
+![BlackPhish Screenshot](https://i.postimg.cc/0jLzc6SH/Screenshot-2025-01-02-174238.png)
 
 ---
 
@@ -52,11 +54,6 @@ BlackPhish is compatible with Termux, Linux, and Ubuntu. Follow these steps to s
 - **Custom Templates:** Easily create phishing pages for any website.
 - **Hosting Services:** Reliable hosting without the risk of being banned.
 - **Educational Tool:** Designed strictly for educational and ethical purposes.
-
----
-
-## Screenshot
-![BlackPhish Screenshot](https://i.postimg.cc/0jLzc6SH/Screenshot-2025-01-02-174238.png)
 
 ---
 
